@@ -15,6 +15,8 @@ exists only to allow the sequence to be calculated (by storing the
 
 3) ...then we filter out odd numbers and sum the result.
 
+> import Data.List(unfoldr)
+
 > prob2 = (sum . filter even . map fst) fibs
 >   where fibs = unfoldr fib (1, 0)
 >         fib (x, y) | x < 4000000 = Just ((x + y, x), (x + y, x))
